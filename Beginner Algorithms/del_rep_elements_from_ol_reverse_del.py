@@ -2,17 +2,13 @@
 # Return length of none repeat list
 # Example: Input: [0,0,1,1,1,2,2,3,3,4], output:[0,1,2,3,4], Length:5
 
-#Double pointer method
+# Reverse delete method
 class Solution:
     def removeDuplicates(nums):
-        if len(nums) == 0:
-            return 0
-        l = 0
-        for r in range(1, len(nums)):
-            if nums[l] != nums[r]:
-                nums[l+1] = nums[r]
-                l = l + 1
-        return l+1
+        for i in range(len(nums)-1, 0, -1):
+            if nums[i] == nums[i-1]:
+                del nums[i]
+        return len(nums)
     
 #test case from LC
 nums = [0,0,1,1,1,2,2,3,3,4]
@@ -23,6 +19,3 @@ k = Solution.removeDuplicates(nums)
 assert k == len(expectedNums)
 for i in range (0, k):
     assert nums[i] == expectedNums[i];
-    
-
-
