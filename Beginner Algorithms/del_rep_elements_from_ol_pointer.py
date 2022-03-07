@@ -12,7 +12,7 @@ class Solution:
                 l = l + 1
         return l+1
     
-#test case
+#test case from LC
 nums = [0,0,1,1,1,2,2,3,3,4]
 expectedNums = [0,1,2,3,4]
 
