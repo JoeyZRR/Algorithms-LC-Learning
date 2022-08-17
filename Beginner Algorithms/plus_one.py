@@ -4,6 +4,7 @@
 # Input: digits = [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123.
 # Incrementing by one gives 123 + 1 = 124.
 # Thus, the result should be [1,2,4].
+import math
 
 class Solution(object):
     def plusOne(self, digits):
@@ -23,3 +24,5 @@ class Solution(object):
         #Case that all digits are 9, add 1 to the beginning of the list
         digits.insert(0,1)
         return digits
+    
+math.factorial()

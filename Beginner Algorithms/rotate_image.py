@@ -3,21 +3,20 @@
 # Example: Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 # Output: [[7,4,1],[8,5,2],[9,6,3]]
 
-class Solution(object):
+class Solution:
     def rotate(self, matrix):
         """
         :type matrix: List[List[int]]
         :rtype: None Do not return anything, modify matrix in-place instead.
         """
         # Rotate Up and dowm
-        for i in range(len(matrix)/2):
-            temp = matrix[i]
-            matrix[i] = matrix[len(matrix)-i-1]
-            matrix[len(matrix)-i-1] = temp
-        
+        for i in range(len(matrix)//2):
+            matrix[i], matrix[len(matrix)-i-1] = matrix[len(matrix)-i-1], matrix[i]
+            
         # Rotate the symmetry
         for i in range(len(matrix)):
             for j in range(i+1,len(matrix)):
-                temp = matrix[i][j]
-                matrix[i][j] = matrix[j][i]
-                matrix[j][i] = temp
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
+        return matrix
+print(Solution().rotate([[1,2,3],[4,5,6],[7,8,9]]))

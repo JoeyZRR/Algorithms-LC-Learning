@@ -1,6 +1,6 @@
 # Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 # An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
- 
+import collections
 # Example 1:  Input: s = "anagram", t = "nagaram"
 # Output: true
 
@@ -14,4 +14,4 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return collections.Counter(s) == collections.Counter(t)
+        return collections.Counter(s) == collections.Counter(t)   
